@@ -20,7 +20,7 @@ public class ProductController {
         this.serviceProduct = serviceProduct;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/msg")
     public ResponseEntity<String> printWelcomeMessage() {
         return new ResponseEntity<>(serviceProduct.displayMessage(), HttpStatus.OK);
     }
