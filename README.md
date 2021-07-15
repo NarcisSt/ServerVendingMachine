@@ -1,1 +1,1 @@
-# The server side of the {https://github.com/NarcisSt/VendingMachine} [Vending Machine Application]
+# The server side of the [Vending Machine Application](https://github.com/NarcisSt/VendingMachine)
