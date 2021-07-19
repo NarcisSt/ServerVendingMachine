@@ -32,4 +32,8 @@ public class ServiceProduct {
     public Product getById(Long id) {
         return this.repository.getProductById(id);
     }
+
+    public Product saveProduct(Product product) {
+        return this.repository.saveProd(product);
+    }
 }

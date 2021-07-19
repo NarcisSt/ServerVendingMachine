@@ -2,6 +2,7 @@ package server.demo.entities;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Table(name = "PRODUCT")
 public class Product {
     @Id
+    @GeneratedValue
     @Column(name = "ID")
     private Long id;
 
@@ -18,4 +20,6 @@ public class Product {
     @Column(name = "PRICE")
     private Double price;
 
+    @Column(name = "DATE")
+    private Date date = new Date();
 }

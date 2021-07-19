@@ -36,5 +36,14 @@ public class ProductRepository {
         }
     }
 
+    public Product saveProd(Product product) {
+        if(product.getId() == null) {
+            entityManager.persist(product);
+        } else {
+            product = entityManager.merge(product);
+        }
+        return product;
+    }
+
 
 }

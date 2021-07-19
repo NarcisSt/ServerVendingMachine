@@ -3,11 +3,11 @@ package server.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import server.demo.entities.Product;
 import server.demo.services.ServiceProduct;
 
+import java.rmi.ServerException;
 import java.util.*;
 
 @RestController
@@ -35,8 +35,13 @@ public class ProductController {
         return new ResponseEntity<>(serviceProduct.getByName(name), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/id/{id}")
     public ResponseEntity<Product> getPById(@PathVariable Long id) {
         return new ResponseEntity<>(serviceProduct.getById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/insert")
+    public ResponseEntity<Product> saveP(@RequestBody Product product) {
+        return new ResponseEntity<>(ServiceProduct.saveProduct(product), HttpStatus.CREATED);
     }
 }
